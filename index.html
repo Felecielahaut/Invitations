@@ -1,94 +1,121 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>You're Invited 💌</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wedding Invitation 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display&display=swap" rel="stylesheet">
 
 <style>
 body {
   margin: 0;
-  font-family: 'Arial';
-  background: linear-gradient(135deg, #ffd6e7, #e0c3fc);
+  font-family: 'Playfair Display', serif;
+  background: linear-gradient(135deg, #fff8f6, #fadadd);
   text-align: center;
-  overflow: hidden;
+}
+
+.container {
+  padding: 40px 20px;
+}
+
+h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 50px;
+  color: #ff8fab;
 }
 
 .card {
   background: white;
-  padding: 30px;
-  border-radius: 25px;
-  width: 300px;
-  margin: 120px auto;
+  margin: 20px auto;
+  padding: 25px;
+  max-width: 400px;
+  border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  animation: pop 1s ease;
-}
-
-h1 {
-  color: #ff4f81;
+  animation: fadeIn 1s ease;
 }
 
 button {
-  margin-top: 15px;
-  padding: 12px 20px;
+  padding: 10px 20px;
   border: none;
   background: #ff8fab;
   color: white;
-  border-radius: 12px;
+  border-radius: 10px;
   cursor: pointer;
-  font-size: 16px;
 }
 
 button:hover {
   background: #ff4f81;
 }
 
-@keyframes pop {
-  from {transform: scale(0.5); opacity: 0;}
-  to {transform: scale(1); opacity: 1;}
+input, select {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 1px solid #ddd;
 }
 
-/* قلوب متحركة */
-.heart {
-  position: absolute;
-  color: pink;
-  animation: float 5s linear infinite;
+iframe {
+  width: 100%;
+  height: 250px;
+  border-radius: 15px;
+  border: none;
 }
 
-@keyframes float {
-  from {transform: translateY(100vh);}
-  to {transform: translateY(-10vh);}
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
 }
 </style>
-
 </head>
 
 <body>
 
-<div class="card">
-  <h1>You're Invited 🎉</h1>
-  <p>Birthday Party 💖</p>
-  <p>April 25 - 7 PM</p>
+<div class="container">
 
-  <button onclick="rsvp()">RSVP</button>
+<h1>Blush Moments 💖</h1>
+<p>You’re invited to our special day ✨</p>
+
+<!-- Event Info -->
+<div class="card">
+  <h3>Wedding Details 💍</h3>
+  <p><b>Hall:</b> Royal Garden</p>
+  <p><b>Location:</b> Nasr City, Cairo</p>
+  <p><b>Date:</b> 25 April - 7 PM</p>
 </div>
 
-<script>
-function rsvp() {
-  alert("Yay! Can't wait to see you 💕");
-}
+<!-- Google Map -->
+<div class="card">
+  <h3>Location 📍</h3>
 
-/* قلوب عشوائية */
-for(let i=0;i<15;i++){
-  let heart = document.createElement("div");
-  heart.className = "heart";
-  heart.innerHTML = "💖";
-  heart.style.left = Math.random()*100 + "vw";
-  heart.style.fontSize = (20 + Math.random()*20) + "px";
-  heart.style.animationDuration = (3 + Math.random()*3) + "s";
-  document.body.appendChild(heart);
-}
-</script>
+  <!-- غيري اللينك ده من جوجل مابس -->
+  <iframe src="https://maps.google.com/maps?q=cairo&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+
+</div>
+
+<!-- RSVP -->
+<div class="card">
+  <h3>RSVP 💌</h3>
+
+  <!-- حطي لينك Formspree هنا -->
+  <form action="https://formspree.io/f/yourID" method="POST">
+
+    <input type="text" name="name" placeholder="Your Name" required>
+
+    <input type="email" name="email" placeholder="Your Email" required>
+
+    <select name="attendance">
+      <option value="yes">Attending ✅</option>
+      <option value="no">Not Attending ❌</option>
+    </select>
+
+    <button type="submit">Send</button>
+
+  </form>
+</div>
+
+</div>
 
 </body>
 </html>
