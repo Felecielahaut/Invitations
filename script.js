@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const rsvpDeadline = document.getElementById('cfg-rsvp-deadline');
         if (rsvpDeadline) rsvpDeadline.textContent = `Please respond by ${weddingConfig.rsvpDeadline}`;
         const fDate = document.getElementById('cfg-footer-date');
-        if (fDate) fDate.textContent = `Made with love - ©BlushMoments.inc`;
+        if (fDate) fDate.textContent = `Made with love for ${weddingConfig.eventDateDisplay}`;
     }
 
     populateConfig();
